@@ -1,0 +1,52 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+
+class Employee{
+	String name, address;
+	int id;
+}
+
+public class StudentIds {
+
+	public static void main(String[] args) {
+		Scanner data=new Scanner(System.in);
+		//No. of Students
+		System.out.println("Enter the no. of students: ");
+		int n=data.nextInt();
+		
+		//To store the id's
+		ArrayList<Integer> arl=new ArrayList<Integer>();
+		
+		//To store the Employee Details
+		Employee[] arr=new Employee[n];
+		
+		//Storing the Details
+		for(int i=0;i<n;i++) {
+			Employee emp=new Employee();
+			emp.id=data.nextInt();data.nextLine();
+			arl.add(emp.id);
+			emp.name=data.nextLine();
+			emp.address=data.nextLine();
+			arr[i]=emp;
+		}
+		
+		//Sorting the id's
+		Collections.sort(arl);
+		
+		//Printing the Details
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<n;j++) {
+				if(arl.get(i)==arr[j].id) {
+					System.out.println(arr[j].id+"--"
+					+arr[j].name+"--"
+					+arr[j].address);
+				}
+			}
+		}
+		
+		
+		data.close();
+	}
+
+}
