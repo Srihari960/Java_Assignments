@@ -1,0 +1,56 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+interface Area{
+	public void area();	
+}
+
+
+class Triangle implements Area{
+	public void area(){
+		Scanner data=new Scanner(System.in);
+		double area, height, base;
+		System.out.println("Enter the base and height of the Triangle: ");
+		base=data.nextDouble();
+		height=data.nextDouble();
+		area=0.5*base*height;
+		System.out.println("Area of the Triangle is "+area);
+	}
+}
+
+
+class Circle implements Area{
+	public void area(){
+		Scanner data=new Scanner(System.in);
+		double rad, area;
+		System.out.println("Enter the radius of the circle: ");
+		rad=data.nextDouble();
+		area=3.14*Math.pow(rad,2);
+		System.out.println("Area of the Circle is "+area);
+	}
+}
+
+
+class Rectangle implements Area{
+	public void area(){
+		Scanner data=new Scanner(System.in);
+		double len,bre, area;
+		System.out.println("Enter the length and height of rectangle: ");
+		len=data.nextDouble();
+		bre=data.nextDouble();
+		area=len*bre;
+		System.out.println("Area of the Rectangle is "+area);
+	}
+}
+
+
+class TestArea{
+	public static void main(String[] args){
+		Area t=new Triangle();
+		Area c=new Circle();
+		Area r=new Rectangle();
+		t.area();
+		c.area();
+		r.area();
+	}
+}
